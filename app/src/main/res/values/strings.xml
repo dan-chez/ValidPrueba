@@ -2,5 +2,10 @@
     <string name="app_name">Valid</string>
 
     <string name="aceptar">Aceptar</string>
+    <string name="requestErrorTitle">Error</string>
+    <string name="requestErrorSubtitle">No se ha podido establecer la comunicación con el servidor. Inténtelo de nuevo.</string>
+    <string name="listeners">Oyentes:</string>
+    <string name="duration">Duración:</string>
+    <string name="title_top_artists">Top artistas de Colombia</string>
 
 </resources>

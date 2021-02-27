@@ -1,7 +1,6 @@
 package co.danchez.valid.model.topArtists;
 
-import com.google.gson.JsonObject;
-
+import co.danchez.valid.model.topArtists.models.TopartistsResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

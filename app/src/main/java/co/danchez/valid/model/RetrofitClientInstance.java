@@ -1,4 +1,4 @@
-package co.danchez.valid.model.topArtists;
+package co.danchez.valid.model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

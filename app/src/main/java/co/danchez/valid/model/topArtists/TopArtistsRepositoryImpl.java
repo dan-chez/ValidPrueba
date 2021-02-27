@@ -1,7 +1,10 @@
 package co.danchez.valid.model.topArtists;
 
+import android.util.Log;
+
+import co.danchez.valid.model.RetrofitClientInstance;
+import co.danchez.valid.model.topArtists.models.TopartistsResponse;
 import co.danchez.valid.presenter.TopArtistsPresenter;
-import co.danchez.valid.util.Util;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -18,7 +21,7 @@ public class TopArtistsRepositoryImpl implements TopArtistsRepository {
 
     @Override
     public void getTopArtist() {
-        WebService webService = RetrofitClientInstance.getRetrofitInstance().create(WebService.class);
+        co.danchez.valid.model.topArtists.WebService webService = RetrofitClientInstance.getRetrofitInstance().create(co.danchez.valid.model.topArtists.WebService.class);
         Call<TopartistsResponse> callTopArtists = webService.getTopArtists(methodArtists, country, api_key, format);
         callTopArtists.enqueue(new Callback<TopartistsResponse>() {
             @Override
@@ -33,6 +36,7 @@ public class TopArtistsRepositoryImpl implements TopArtistsRepository {
 
             @Override
             public void onFailure(Call<TopartistsResponse> call, Throwable t) {
+                Log.e("TAG", "onFailure: ", t.getCause());
                 artistPresenter.showErrorGetTopArtists();
             }
         });

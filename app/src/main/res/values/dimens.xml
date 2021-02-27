@@ -1,0 +1,16 @@
+<resources>
+
+    <dimen name="optionsButtons">20sp</dimen>
+    <dimen name="credits">15sp</dimen>
+    <dimen name="optionsTitle">30sp</dimen>
+    <dimen name="tvName">20sp</dimen>
+    <dimen name="tvListeners">15sp</dimen>
+    <dimen name="margin">15dp</dimen>
+    <dimen name="marginCv">10dp</dimen>
+    <dimen name="tvTitle">25sp</dimen>
+    <dimen name="ivIcon">100dp</dimen>
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin">20dp</dimen>
+    <dimen name="appbarlayout_height">160dp</dimen>
+
+</resources>

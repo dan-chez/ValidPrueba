@@ -1,8 +1,10 @@
-package co.danchez.valid;
+package co.danchez.valid.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import co.danchez.valid.R;
 
 public class MainActivity extends AppCompatActivity {
 
