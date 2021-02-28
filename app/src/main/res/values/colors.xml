@@ -11,4 +11,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#4DA1A0A0</color>
+    <color name="valid_grey">#323232</color>
+    <color name="slider_linea">#D2D1D1</color>
 </resources>

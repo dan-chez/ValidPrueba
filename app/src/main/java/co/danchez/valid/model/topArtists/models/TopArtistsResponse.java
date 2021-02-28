@@ -3,7 +3,7 @@ package co.danchez.valid.model.topArtists.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class TopartistsResponse {
+public class TopArtistsResponse {
 
     @SerializedName("topartists")
     @Expose

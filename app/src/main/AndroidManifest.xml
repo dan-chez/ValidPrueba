@@ -11,12 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Valid">
+        <activity android:name=".view.activities.Level2Activity"></activity>
         <activity
-            android:name=".view.activities.MainActivity"
+            android:name=".view.activities.TraineeActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.activities.TraineeActivity"
+            android:name=".view.activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>

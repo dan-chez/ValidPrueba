@@ -7,5 +7,10 @@
     <string name="listeners">Oyentes:</string>
     <string name="duration">Duración:</string>
     <string name="title_top_artists">Top artistas de Colombia</string>
+    <string name="title_top_tracks">Top canciones de Colombia</string>
+    <string name="optionButton1">Trainee y level I</string>
+    <string name="optionButton2">Level II y III</string>
+    <string name="optionsTitle">Prueba técnica Android </string>
+    <string name="credits">Daniel Mauricio Sanchez Acebedo</string>
 
 </resources>
