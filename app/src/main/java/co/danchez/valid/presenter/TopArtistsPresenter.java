@@ -12,4 +12,8 @@ public interface TopArtistsPresenter {
 
     void showErrorGetTopArtists();
 
+    void saveDataInDB(String data, int position);
+
+    void getDataFromDB(int position);
+
 }

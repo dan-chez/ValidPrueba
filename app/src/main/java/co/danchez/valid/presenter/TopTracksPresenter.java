@@ -14,4 +14,10 @@ public interface TopTracksPresenter {
 
     void showErrorGetTop();
 
+    void saveDataInDB(String data, int position);
+
+    void showDataFromDB(String data, int position);
+
+    void getDataFromDB(int position);
+
 }

@@ -31,9 +31,7 @@ public class Level2Activity extends AppCompatActivity implements Level2View {
     @BindView(R.id.vp_fm)
     ViewPager vp_fm;
 
-    private TextView[] dots;
     private TopTracksPresenter topTracksPresenter;
-
     private ViewPagerAdapter viewPagerAdapter;
     private List<Track> tracks;
     private List<Artist> artists;
@@ -44,9 +42,9 @@ public class Level2Activity extends AppCompatActivity implements Level2View {
         setContentView(R.layout.activity_level2);
         ButterKnife.bind(this);
 
-        dots = Util.addBottomDots(layout_dots, 0, Level2Activity.this);
+        Util.addBottomDots(layout_dots, 0, Level2Activity.this);
 
-        topTracksPresenter = new TopTracksPresenterImpl(this);
+        topTracksPresenter = new TopTracksPresenterImpl(this, Level2Activity.this);
 
         vp_fm.addOnPageChangeListener(viewPagerPageChangeListener);
 

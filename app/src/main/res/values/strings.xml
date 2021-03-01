@@ -12,5 +12,7 @@
     <string name="optionButton2">Level II y III</string>
     <string name="optionsTitle">Prueba técnica Android </string>
     <string name="credits">Daniel Mauricio Sanchez Acebedo</string>
+    <string name="error_message">Error al insertar datos en la base de datos</string>
+    <string name="error">Error:</string>
 
 </resources>

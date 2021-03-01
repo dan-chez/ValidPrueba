@@ -14,13 +14,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import co.danchez.valid.R;
 import co.danchez.valid.model.topArtists.models.Artist;
+import co.danchez.valid.model.topTracks.models.Track;
 import co.danchez.valid.presenter.TopArtistsPresenter;
 import co.danchez.valid.presenter.TopArtistsPresenterImpl;
 import co.danchez.valid.util.Util;
 import co.danchez.valid.view.adapters.TopArtistsAdapter;
+import co.danchez.valid.view.interfaces.Level2View;
 import co.danchez.valid.view.interfaces.TraineeView;
 
-public class TraineeActivity extends AppCompatActivity implements TraineeView {
+public class TraineeActivity extends AppCompatActivity implements TraineeView, Level2View {
 
     private TopArtistsPresenter topArtistsPresenter;
     @BindView(R.id.rv_artists)
@@ -34,7 +36,7 @@ public class TraineeActivity extends AppCompatActivity implements TraineeView {
         setContentView(R.layout.activity_trainee);
         ButterKnife.bind(this);
 
-        topArtistsPresenter = new TopArtistsPresenterImpl(this);
+        topArtistsPresenter = new TopArtistsPresenterImpl(this, TraineeActivity.this);
 
         getTopArtist();
 
@@ -59,5 +61,31 @@ public class TraineeActivity extends AppCompatActivity implements TraineeView {
     public void showErrorGetTopArtists() {
         rl_loading.setVisibility(View.GONE);
         Util.showAlertDialogError(TraineeActivity.this, getString(R.string.requestErrorTitle), getString(R.string.requestErrorSubtitle));
+    }
+
+
+    @Override
+    public void getTopArtists() {
+
+    }
+
+    @Override
+    public void showTopArtists(List<Artist> artist) {
+
+    }
+
+    @Override
+    public void getTopTracks() {
+
+    }
+
+    @Override
+    public void showTopTracks(List<Track> track) {
+
+    }
+
+    @Override
+    public void showErrorGetTop() {
+
     }
 }

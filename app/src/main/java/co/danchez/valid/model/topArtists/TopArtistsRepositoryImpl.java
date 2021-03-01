@@ -2,6 +2,8 @@ package co.danchez.valid.model.topArtists;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import co.danchez.valid.model.RetrofitClientInstance;
 import co.danchez.valid.model.WebService;
 import co.danchez.valid.model.topArtists.models.TopArtistsResponse;
@@ -29,16 +31,17 @@ public class TopArtistsRepositoryImpl implements TopArtistsRepository {
             public void onResponse(Call<TopArtistsResponse> call, Response<TopArtistsResponse> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().getTopartists() != null && response.body().getTopartists().getArtist() != null
                 && response.body().getTopartists().getArtist().size() > 0) {
+                    artistPresenter.saveDataInDB(new Gson().toJson(response.body().getTopartists().getArtist()), 0);
                     artistPresenter.showTopArtist(response.body().getTopartists().getArtist());
                 } else {
-                    artistPresenter.showErrorGetTopArtists();
+                    artistPresenter.getDataFromDB(0);
                 }
             }
 
             @Override
             public void onFailure(Call<TopArtistsResponse> call, Throwable t) {
                 Log.e("TAG", "onFailure: ", t.getCause());
-                artistPresenter.showErrorGetTopArtists();
+                artistPresenter.getDataFromDB(0);
             }
         });
     }

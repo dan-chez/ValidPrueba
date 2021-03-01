@@ -1,5 +1,7 @@
 package co.danchez.valid.model.topTracks;
 
+import com.google.gson.Gson;
+
 import co.danchez.valid.model.RetrofitClientInstance;
 import co.danchez.valid.model.WebService;
 import co.danchez.valid.model.topTracks.models.TopTracksResponse;
@@ -30,15 +32,16 @@ public class TopTracksRepositoryImpl implements TopTracksRepository {
             public void onResponse(Call<TopTracksResponse> call, Response<TopTracksResponse> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().getTracks() != null && response.body().getTracks().getTrack() != null
                 && response.body().getTracks().getTrack().size() > 0) {
+                    topTracksPresenter.saveDataInDB(new Gson().toJson(response.body().getTracks().getTrack()), 1);
                     topTracksPresenter.showTopTracks(response.body().getTracks().getTrack());
                 } else {
-                    topTracksPresenter.showErrorGetTop();
+                    topTracksPresenter.getDataFromDB(1);
                 }
             }
 
             @Override
             public void onFailure(Call<TopTracksResponse> call, Throwable t) {
-                topTracksPresenter.showErrorGetTop();
+                topTracksPresenter.getDataFromDB(1);
             }
         });
 
